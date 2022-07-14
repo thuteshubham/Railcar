@@ -1,0 +1,22 @@
+org: shubham1994
+app: aws-node-project
+service: mssql
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  app-api:
+    handler: handler.handler
+    events:
+     - http:
+        path: /
+        method: get
+        cors: true
+     - http:
+        path: /{proxy+}
+        method: any 
+        cors: true
