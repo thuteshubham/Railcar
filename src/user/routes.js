@@ -9,7 +9,7 @@ routes.get('/',(req,res)=>{
     res.status(200).json({});
 })
 
-routes.get('/users',controller.getAllTrains);
+routes.post('/users',controller.getAllTrains);
 routes.get('/activeInventory',controller.getActiveInventory);
 routes.get('/getDormantInventory',controller.getDormantInventory)
 routes.get('/getActiveLocoInfo',controller.getActiveLocoInfo)

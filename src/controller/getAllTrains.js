@@ -14,14 +14,14 @@ moment.suppressDeprecationWarnings = true;
 async function getAllTrains(req, res) {
      //Connect with Database
      const dbConnect = await dbConnection;
-    console.log("helloo users");
+    console.log("helloo users",req.body);
     const reponsee=await dbConnect.request().query('select * from Inventory');
-    console.log("reponsee",reponsee);
+    // console.log("reponsee",reponsee);
     const response = {
         statusCode: 200,
         body: reponsee
     };
-    console.log(response);
+    // console.log(response);
     res.send(response);
 }
 
